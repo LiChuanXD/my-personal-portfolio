@@ -1,0 +1,528 @@
+@import "configs";
+
+*{
+    box-sizing: border-box;
+}
+
+body{//body//
+    margin : 0;
+    padding : 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5em;
+    width : 100%;
+    height : 100%;
+    background-color : $main-color;
+    color : white;
+    @include backgroundImg;
+
+    &:after{//body:after//
+        content : "";
+        position: absolute;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        background-color : $main-color;
+        opacity: 0.9;
+        z-index: -1;
+    }//body:after//
+}//body//
+
+
+//home content
+#home-content{ //home content
+    margin-top : 25vh;
+    text-align: center;
+    h3{
+        margin-top : 80px;
+    }
+    span{
+        color : $side-color;
+    }//span
+    
+} //home content (h1 , h2 ,h3)
+
+header{//header
+    position: fixed;
+    width : 100%;
+    top : 0;
+    z-index: 2;
+
+    #menu-btn{//menu button
+        position: absolute;
+        z-index: 3;
+        top : 35px;
+        right : 35px;
+        cursor: pointer;
+        @include transitionAll;
+
+        .btn-line{
+            height : 3px;
+            width : 25px;
+            background-color : white;
+            margin-bottom : 3px;
+            @include transitionAll;
+        }
+
+        &.spin{//spin after click menu btn class
+            transform: rotate(180deg);
+
+            .btn-line:nth-child(1){
+                transform: rotate(45deg) translate(5px , 6px);
+            }
+
+            .btn-line:nth-child(2){
+                transform: rotate(90deg);
+                opacity: 0;
+            }
+
+            .btn-line:nth-child(3){
+                transform: rotate(135deg) translate(-3px , 3px);
+            }
+        }//spin after click menubtn class
+
+    }//menu button
+
+    #nav-bar{//navigation bar
+        position: fixed;
+        top : 0;
+        left : 0;
+        width: 100%;
+        height : 100%;
+        visibility: hidden;
+
+        &.show{
+            visibility: visible;
+        }//after click, show menu
+
+        #portrait {//div for portrait
+            background-color : lighten($main-color, 5);
+            opacity: 0.85;
+            height : 40%;
+            margin : 0;
+            padding : 0;
+            text-align : center;
+            transform: translate(-100% , 0);
+            @include transitionAll;
+
+            #myPortrait{//portrait img
+                @include myPortrait;
+            }//portrait img//
+
+            &.slideIn{
+                transform : translate(0 , 0);
+            }//after click, slide in
+
+        }//div for portrait//
+
+        #menu-nav{
+            text-align : center;
+            background-color : darken($main-color, 5);
+            opacity: 0.9;
+            overflow: hidden;
+            height : 60%;
+            margin : 0;
+            padding : 0;
+            transform: translate(100% , 0);
+            @include transitionAll;
+
+            .nav-item{
+                list-style: none;
+                padding : 0;
+                margin : 40px auto;
+
+                a{
+                    color : white;
+                    text-decoration: none;
+                    font-size : 20px;
+                    &:hover{
+                        color : $side-color;
+                        font-weight: bold;
+                    }
+
+
+                    span#current-page{
+                        color : $side-color;
+                        font-weight : bold;
+                    }
+                }//a//
+            }//li//
+
+            &.slideIn{
+                transform: translate(0, 0);
+            }
+
+        }//ul//
+        
+    }//navigation bar
+}//header//
+
+
+//about page
+section{//top section
+    #about-header{//about header
+        position: fixed;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 28vh;
+        border-bottom : 2px $side-color solid;
+        background-image : $about-img;
+        background-size : cover;
+        background-position: center;
+        text-align: center;
+        padding : 0;
+        margin : 0;
+    
+        #abtPortrait{
+            height : 113px;
+            width : 113px;
+            border-radius: 25%;
+            margin : 19vh auto;
+            border : 2px $side-color solid;
+        }
+    }//about header
+
+    #myBio{
+        text-align : center;
+        margin-top: 38vh;
+        h2 , h3 , h4{
+            margin : 0;
+            padding : 0;
+        }
+    }
+}//top section
+#bio{
+    margin-left : 5vw;
+}
+
+#biography{
+    margin : 0;
+    padding : 0;
+    text-align : justify;
+    display : flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    .bio-box{
+        border : 1px grey solid;
+        margin : 0 0 5px 0;
+        padding : 0;
+        background-color : lighten($main-color, 1.5);
+
+        strong{
+            color : $side-color;
+        }
+
+        .bio-header{
+            background-color : darken($main-color, $amount: 1.5);
+            padding : 5px;
+            margin: 0;
+        }
+        p{
+            padding : 8px;
+        }
+    }//box in the biography
+}//biography
+
+#cHead{
+    margin-top : 10vh;
+    margin-bottom: 50px;
+    margin-left : 12vw;
+    span{
+        color : $side-color;
+    }
+}
+#contactMe{
+    text-align : center;
+    display : flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    .cBox{
+        border : 2px silver solid;
+
+        .cText{
+            color : $side-color;
+        }
+    }//contact page box
+}//contactpage
+
+#cFoot{
+    padding : 0;
+    margin-left : 25px;
+    a{
+        color : white;
+        margin : auto 10px;
+        font-size : 28px;
+        &:hover{
+            color : $side-color;
+        }
+    }
+}//contact page footer
+
+#projects{//project page
+    background-color: $main-color;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    h3{
+        color : $side-color;
+        text-align : center;
+        padding : 0;
+        margin : 120px auto 0 auto;
+    }
+
+    .project-group{
+        display : flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin : auto;
+        width: 100%;
+        text-align : center;
+        overflow: hidden;
+        box-sizing: border-box;
+        
+        .project-box{
+            border : 1px grey solid;
+            width : 350px;
+            height : 350px;
+            padding : 0;
+            margin : 10px auto;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            p{
+                padding : 0;
+                margin : 0;
+            }
+
+            .project-img{
+                width : 250px;
+                height : 250px;
+            }
+
+            .github-link{
+                padding : 10px;
+                margin : auto;
+                background-color : $side-color;
+                width : 350px;
+                display : block;
+                text-decoration: none;
+                color : white;
+            }
+
+        }
+    }
+}//project page
+
+
+//media queries
+//for medium size / tablets 
+@media screen and (min-width : 768px){
+    #home-content{ //home content
+        font-size : 32px;
+        h3{
+            margin-top : 150px;
+        }
+    } //home content (h1 , h2 ,h3)
+
+    header{//header
+        #menu-btn{//menu button
+            top : 40px;
+            right : 40px;
+        }//menu button
+        
+        #nav-bar{//navigation bar
+            display :flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            #portrait {//div for portrait
+                width : 40%;
+                height : 100%;
+                transform: translate(0, 100%);
+                #myPortrait{//portrait img
+                    height : 180px;
+                    width : 180px;
+                    margin : 30vh auto;
+                }//portrait img//
+            }//div for portrait//
+    
+            #menu-nav{
+                width : 60%;
+                height : 100%;
+                transform: translate(0 , -100%);
+                padding-top : 10%;
+                @include transitionAll;
+    
+                .nav-item{
+                    list-style: none;
+                    padding : 0;
+                    margin : 80px auto;
+    
+                    a{
+                        font-size : 28px;
+                    }//a//
+                }//li//
+            }//ul//
+        }//navigation bar
+    }//header//
+
+    //about page
+    section{//top section
+        #about-header{//about header
+            height : 30vh;
+        
+            #abtPortrait{
+                height : 125px;
+                width : 125px;
+                margin : 20vh auto;
+            }
+        }//about header
+
+        #myBio{
+            margin-top: 40vh;
+            h2 , h3 , h4{
+                margin-top : 10px;
+            }
+        }
+    }//top section
+
+    #cHead{
+        margin-top : 12vh;
+        font-size : 40px;
+    }
+    #contactMe{
+        .cBox{
+            font-size : 18px;
+            line-height: 1.3em;
+        }//contact page box
+    }//contactpage
+    
+    #cFoot{
+        font-size : 20px;
+        a{
+            font-size : 30px;
+        }
+    }//contact page footer
+
+    #projects{//project page
+        .project-group{
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }//project page
+}
+
+
+//large device laptop/desktop
+@media screen and (min-width : 992px){
+    #home-content{ //home content
+        text-align : justify;
+
+        h1 , h2 , h3{
+            margin-left : 60px;
+        }
+    } //home content (h1 , h2 ,h3)
+
+
+    header{//header
+        #nav-bar{//navigation bar
+            #portrait {//div for portrait
+                #myPortrait{//portrait img
+                    height : 200px;
+                    width : 200px;
+                    margin : 40% auto;
+                }//portrait img//
+            }//div for portrait//
+    
+            #menu-nav{
+                padding-top : 7%;
+            }//ul//
+        }//navigation bar
+    }//header//
+
+    //about page
+    section{//top section
+        #about-header{//about header
+            height : 30vh;
+
+            #abtPortrait{
+                height : 150px;
+                width : 150px;
+                margin : 18vh auto;
+            }
+        }//about header
+
+        #myBio{
+            margin-top: 43vh;
+            h2 , h3 , h4{
+                display : inline;
+                font-size : 36px;
+                margin : 0 5%;
+            }
+        }
+    }//top section
+
+    #bio{
+        font-size : 28px;
+        margin-bottom : 13px;
+    }
+    #biography{
+        margin : 0;
+        padding : 0;
+        text-align : justify;
+        font-size : 18px;
+        display : flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .bio-box{
+            width : (100% / 3.1);
+            margin : 0 0 5px 0;
+            padding : 0;
+            background-color : lighten($main-color, 1.5);
+
+            strong{
+                color : $side-color;
+            }
+
+            .bio-header{
+                text-align: center;
+            }
+            p{
+                padding : 8px;
+            }
+        }//box in the biography
+    }//biography
+
+    #cHead{
+        margin-top : 12vh;
+        font-size : 44px;
+    }
+    #contactMe{
+        flex-direction: row;
+        justify-content: space-evenly;
+        .cBox{
+            flex-basis : 300px;
+            line-height: 1.5em;
+            .cText{
+                color : $side-color;
+            }
+        }//contact page box
+    }//contactpage
+    
+    #cFoot{
+        margin-top : 50px;
+        margin-left : 25px;
+        font-size : 24px;
+        a{
+            color : white;
+            margin : auto 10px;
+            font-size : 32px;
+        }
+    }//contact page footer
+
+}

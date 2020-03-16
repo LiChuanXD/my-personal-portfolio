@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5em;
+  width: 100%;
+  height: 100%;
+  background-color: #18181b;
+  color: white;
+  background-image: url(../img/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
+  body:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #18181b;
+    opacity: 0.9;
+    z-index: -1; }
+
+#home-content {
+  margin-top: 25vh;
+  text-align: center; }
+  #home-content h3 {
+    margin-top: 80px; }
+  #home-content span {
+    color: #8232fa; }
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2; }
+  header #menu-btn {
+    position: absolute;
+    z-index: 3;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+    transition: all 650ms; }
+    header #menu-btn .btn-line {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin-bottom: 3px;
+      transition: all 650ms; }
+    header #menu-btn.spin {
+      transform: rotate(180deg); }
+      header #menu-btn.spin .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px); }
+      header #menu-btn.spin .btn-line:nth-child(2) {
+        transform: rotate(90deg);
+        opacity: 0; }
+      header #menu-btn.spin .btn-line:nth-child(3) {
+        transform: rotate(135deg) translate(-3px, 3px); }
+  header #nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden; }
+    header #nav-bar.show {
+      visibility: visible; }
+    header #nav-bar #portrait {
+      background-color: #242429;
+      opacity: 0.85;
+      height: 40%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      transform: translate(-100%, 0);
+      transition: all 650ms; }
+      header #nav-bar #portrait #myPortrait {
+        height: 150px;
+        width: 150px;
+        border: 3px solid #8232fa;
+        border-radius: 45%;
+        margin: 10vh auto; }
+      header #nav-bar #portrait.slideIn {
+        transform: translate(0, 0); }
+    header #nav-bar #menu-nav {
+      text-align: center;
+      background-color: #0c0c0e;
+      opacity: 0.9;
+      overflow: hidden;
+      height: 60%;
+      margin: 0;
+      padding: 0;
+      transform: translate(100%, 0);
+      transition: all 650ms; }
+      header #nav-bar #menu-nav .nav-item {
+        list-style: none;
+        padding: 0;
+        margin: 40px auto; }
+        header #nav-bar #menu-nav .nav-item a {
+          color: white;
+          text-decoration: none;
+          font-size: 20px; }
+          header #nav-bar #menu-nav .nav-item a:hover {
+            color: #8232fa;
+            font-weight: bold; }
+          header #nav-bar #menu-nav .nav-item a span#current-page {
+            color: #8232fa;
+            font-weight: bold; }
+      header #nav-bar #menu-nav.slideIn {
+        transform: translate(0, 0); }
+
+section #about-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28vh;
+  border-bottom: 2px #8232fa solid;
+  background-image: url(../img/background-1.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 0;
+  margin: 0; }
+  section #about-header #abtPortrait {
+    height: 113px;
+    width: 113px;
+    border-radius: 25%;
+    margin: 19vh auto;
+    border: 2px #8232fa solid; }
+
+section #myBio {
+  text-align: center;
+  margin-top: 38vh; }
+  section #myBio h2, section #myBio h3, section #myBio h4 {
+    margin: 0;
+    padding: 0; }
+
+#bio {
+  margin-left: 5vw; }
+
+#biography {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  #biography .bio-box {
+    border: 1px grey solid;
+    margin: 0 0 5px 0;
+    padding: 0;
+    background-color: #1c1c1f; }
+    #biography .bio-box strong {
+      color: #8232fa; }
+    #biography .bio-box .bio-header {
+      background-color: #141417;
+      padding: 5px;
+      margin: 0; }
+    #biography .bio-box p {
+      padding: 8px; }
+
+#cHead {
+  margin-top: 10vh;
+  margin-bottom: 50px;
+  margin-left: 12vw; }
+  #cHead span {
+    color: #8232fa; }
+
+#contactMe {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  #contactMe .cBox {
+    border: 2px silver solid; }
+    #contactMe .cBox .cText {
+      color: #8232fa; }
+
+#cFoot {
+  padding: 0;
+  margin-left: 25px; }
+  #cFoot a {
+    color: white;
+    margin: auto 10px;
+    font-size: 28px; }
+    #cFoot a:hover {
+      color: #8232fa; }
+
+#projects {
+  background-color: #18181b;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  #projects h3 {
+    color: #8232fa;
+    text-align: center;
+    padding: 0;
+    margin: 120px auto 0 auto; }
+  #projects .project-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box; }
+    #projects .project-group .project-box {
+      border: 1px grey solid;
+      width: 350px;
+      height: 350px;
+      padding: 0;
+      margin: 10px auto;
+      overflow: hidden;
+      box-sizing: border-box; }
+      #projects .project-group .project-box p {
+        padding: 0;
+        margin: 0; }
+      #projects .project-group .project-box .project-img {
+        width: 250px;
+        height: 250px; }
+      #projects .project-group .project-box .github-link {
+        padding: 10px;
+        margin: auto;
+        background-color: #8232fa;
+        width: 350px;
+        display: block;
+        text-decoration: none;
+        color: white; }
+
+@media screen and (min-width: 768px) {
+  #home-content {
+    font-size: 32px; }
+    #home-content h3 {
+      margin-top: 150px; }
+  header #menu-btn {
+    top: 40px;
+    right: 40px; }
+  header #nav-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    header #nav-bar #portrait {
+      width: 40%;
+      height: 100%;
+      transform: translate(0, 100%); }
+      header #nav-bar #portrait #myPortrait {
+        height: 180px;
+        width: 180px;
+        margin: 30vh auto; }
+    header #nav-bar #menu-nav {
+      width: 60%;
+      height: 100%;
+      transform: translate(0, -100%);
+      padding-top: 10%;
+      transition: all 650ms; }
+      header #nav-bar #menu-nav .nav-item {
+        list-style: none;
+        padding: 0;
+        margin: 80px auto; }
+        header #nav-bar #menu-nav .nav-item a {
+          font-size: 28px; }
+  section #about-header {
+    height: 30vh; }
+    section #about-header #abtPortrait {
+      height: 125px;
+      width: 125px;
+      margin: 20vh auto; }
+  section #myBio {
+    margin-top: 40vh; }
+    section #myBio h2, section #myBio h3, section #myBio h4 {
+      margin-top: 10px; }
+  #cHead {
+    margin-top: 12vh;
+    font-size: 40px; }
+  #contactMe .cBox {
+    font-size: 18px;
+    line-height: 1.3em; }
+  #cFoot {
+    font-size: 20px; }
+    #cFoot a {
+      font-size: 30px; }
+  #projects .project-group {
+    flex-direction: row;
+    justify-content: space-around; } }
+
+@media screen and (min-width: 992px) {
+  #home-content {
+    text-align: justify; }
+    #home-content h1, #home-content h2, #home-content h3 {
+      margin-left: 60px; }
+  header #nav-bar #portrait #myPortrait {
+    height: 200px;
+    width: 200px;
+    margin: 40% auto; }
+  header #nav-bar #menu-nav {
+    padding-top: 7%; }
+  section #about-header {
+    height: 30vh; }
+    section #about-header #abtPortrait {
+      height: 150px;
+      width: 150px;
+      margin: 18vh auto; }
+  section #myBio {
+    margin-top: 43vh; }
+    section #myBio h2, section #myBio h3, section #myBio h4 {
+      display: inline;
+      font-size: 36px;
+      margin: 0 5%; }
+  #bio {
+    font-size: 28px;
+    margin-bottom: 13px; }
+  #biography {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    #biography .bio-box {
+      width: 32.25806%;
+      margin: 0 0 5px 0;
+      padding: 0;
+      background-color: #1c1c1f; }
+      #biography .bio-box strong {
+        color: #8232fa; }
+      #biography .bio-box .bio-header {
+        text-align: center; }
+      #biography .bio-box p {
+        padding: 8px; }
+  #cHead {
+    margin-top: 12vh;
+    font-size: 44px; }
+  #contactMe {
+    flex-direction: row;
+    justify-content: space-evenly; }
+    #contactMe .cBox {
+      flex-basis: 300px;
+      line-height: 1.5em; }
+      #contactMe .cBox .cText {
+        color: #8232fa; }
+  #cFoot {
+    margin-top: 50px;
+    margin-left: 25px;
+    font-size: 24px; }
+    #cFoot a {
+      color: white;
+      margin: auto 10px;
+      font-size: 32px; } }

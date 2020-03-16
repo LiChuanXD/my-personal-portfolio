@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "my personal portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w sass/ -o public/css/ --recursive",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "keywords": [
+    "work",
+    "job",
+    "portfolio",
+    "personal"
+  ],
+  "author": "Li Chuan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
