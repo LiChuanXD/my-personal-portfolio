@@ -20,7 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "helmet": "^3.21.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
