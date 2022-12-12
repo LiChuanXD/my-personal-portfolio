@@ -18,7 +18,7 @@
   "author": "Li Chuan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.21.2",
     "node-sass": "^4.13.1"
   },
